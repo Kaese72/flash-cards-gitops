@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: hallen
+
+resources:
+  - ../../base
+  - namespace.yaml
+  - ingress.yaml
+
+images:
+  - name: flashcards-backend
+    newName: ghcr.io/REPLACE_ME/flash-cards-backend # TODO: replace REPLACE_ME with the GitHub org/user
+    newTag: latest # TODO: pin to a tag pushed by .github/workflows/build-tagged.yml (e.g. v1.0.0)
+  - name: flashcards-frontend
+    newName: ghcr.io/REPLACE_ME/flash-cards-frontend # TODO: replace REPLACE_ME with the GitHub org/user
+    newTag: latest # TODO: pin to a tag pushed by .github/workflows/build-tagged.yml (e.g. v1.0.0)

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flashcards-backend
+  labels:
+    app: flashcards-backend
+spec:
+  selector:
+    app: flashcards-backend
+  ports:
+    - port: 8080
+      targetPort: 8080
