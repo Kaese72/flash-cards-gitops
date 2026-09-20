@@ -22,7 +22,8 @@ on the PVC.
    `/api` to the backend and `/` to the frontend on the same host, so the frontend's
    default (relative `/api` calls) is what production needs.
 3. Update the `host` in `overlays/hallen/ingress.yaml` to the real hostname, and set
-   `ingressClassName` to match your cluster's ingress controller (assumes `nginx`).
+   `ingressClassName` to match your cluster's ingress controller (the `hallen` cluster
+   only has `traefik`; check with `kubectl get ingressclass`).
 
 ## Deploy
 
