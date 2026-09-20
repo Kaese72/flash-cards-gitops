@@ -13,10 +13,11 @@ on the PVC.
 
 ## Before deploying
 
-1. Push a `v*` tag (e.g. `v1.0.0`) to trigger `.github/workflows/build-tagged.yml`, which
-   builds and pushes `ghcr.io/<owner>/flash-cards-backend` and `-frontend` images tagged
-   to match. Then update `overlays/hallen/kustomization.yaml`'s `images:` section with the
-   real owner and the tag you pushed.
+1. Push a `v*` tag (e.g. `v0.0.2`) in the `flash-cards-backend` and `flash-cards-frontend`
+   repos to trigger their `.github/workflows/build-tagged-master.yml`, which builds and pushes
+   `ghcr.io/<owner>/flash-cards-backend` and `-frontend` images tagged to match. Pushes to
+   `master` publish `-development` images via `build-development.yml`, and both workflows
+   dispatch `renovate.yml` in this repo to bump the image tags.
 2. Build the frontend image **without** `VITE_API_BASE_URL` set. The ingress routes
    `/api` to the backend and `/` to the frontend on the same host, so the frontend's
    default (relative `/api` calls) is what production needs.

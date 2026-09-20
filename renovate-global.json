@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        "Kaese72/flash-cards-gitops"
+    ],
+    "fetchChangeLogs": "off",
+    "hostRules": [
+        {
+            "matchHost": "api.github.com",
+            "concurrentRequestLimit": 2
+        }
+    ]
+}

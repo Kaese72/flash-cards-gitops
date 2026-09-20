@@ -10,8 +10,8 @@ resources:
 
 images:
   - name: flashcards-backend
-    newName: ghcr.io/REPLACE_ME/flash-cards-backend # TODO: replace REPLACE_ME with the GitHub org/user
-    newTag: latest # TODO: pin to a tag pushed by .github/workflows/build-tagged.yml (e.g. v1.0.0)
+    newName: ghcr.io/kaese72/flash-cards-backend
+    newTag: v0.0.2
   - name: flashcards-frontend
-    newName: ghcr.io/REPLACE_ME/flash-cards-frontend # TODO: replace REPLACE_ME with the GitHub org/user
-    newTag: latest # TODO: pin to a tag pushed by .github/workflows/build-tagged.yml (e.g. v1.0.0)
+    newName: ghcr.io/kaese72/flash-cards-frontend
+    newTag: v0.0.2

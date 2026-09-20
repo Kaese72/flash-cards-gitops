@@ -1,0 +1,42 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "dependencyDashboard": true,
+    "prHourlyLimit": 0,
+    "kubernetes": {
+        "fileMatch": [
+            "base/.*.yaml",
+            "overlays/.*.yaml"
+        ]
+    },
+    "kustomize": {
+        "fileMatch": [
+            "base/.*.yaml",
+            "overlays/.*.yaml"
+        ]
+    },
+    "packageRules": [
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "**/*-development"
+            ],
+            "groupName": "dev-images",
+            "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<build>\\d+)-[\\d\\w]+$",
+            "automerge": true,
+            "ignoreTests": true
+        },
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "ghcr.io/kaese72/flash-cards-backend",
+                "ghcr.io/kaese72/flash-cards-frontend"
+            ],
+            "groupName": "own-service-images",
+            "automerge": true
+        }
+    ]
+}
